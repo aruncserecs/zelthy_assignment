@@ -1,24 +1,26 @@
+# importing the required library.
 import smtplib
-sender = 'sender email id'
-password = 'sender_password'
-subject = input("Subject?")
-body = input("Body?")
-recipient = input("Recipient?")
+sender_mail_id = 'sender@mail.com'
+sender_password = 'sender_mail_pass'
+subject = input("Subject? : ")
+body = input("Body? : ")
+recipient_mail_id = input("Recipient? : ")
 
 # creates SMTP session
-session = smtplib.SMTP('localhost')
+email = smtplib.SMTP('smtp.gmail.com', 587)
 
-# start TLS for security
-session.starttls()
+# TLS for security
+email.starttls()
 
-# Authentication
-session.login(sender, password)
+# authentication
+# compiler gives an error for wrong credential.
+email.login(sender_mail_id, sender_password)
 
 
 # sending the mail
-session.sendmail(sender, recipient, body)
+email.sendmail(sender_mail_id, recipient_mail_id, body)
 
-# terminating the session
-session.quit()
 print("Email sent!")
+# terminating the session
+email.quit()
 
