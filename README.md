@@ -3,7 +3,7 @@
 
 Assignment 1
 
-1) Set the sender mail and password in the code.
+1) Set the sender_mail_ and sender_password in the code.
 2) After that run the code using python send_email.py
 3) Take the user input for subject , Body and Recipient Mail ID.
 
